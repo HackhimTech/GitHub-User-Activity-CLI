@@ -4,7 +4,7 @@ const { print, table } = require("./utils/helper");
 
 async function Main() {
   const command = process.argv;
-  if (command.length > 3) {
+  if (command.length > 3 || !command[2]) {
     print(`Invalid command! \nUsage: node app.js <github-username>`);
     return null;
   }
