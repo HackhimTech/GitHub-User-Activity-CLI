@@ -5,4 +5,11 @@ class UserNotFoundError extends Error {
   }
 }
 
-module.exports = UserNotFoundError;
+class BadResponseError extends Error {
+  constructor(msg) {
+    super(msg);
+    this.name = "Bad response Error";
+  }
+}
+
+module.exports = { UserNotFoundError, BadResponseError };

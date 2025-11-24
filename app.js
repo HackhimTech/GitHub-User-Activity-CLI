@@ -53,7 +53,6 @@ async function Main() {
     }
     print(output);
   } catch (err) {
-    console.log(err.message);
     if (err instanceof UserNotFoundError) {
       print("❌ Failed:", err.message);
     } else {

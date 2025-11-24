@@ -1,4 +1,7 @@
-const UserNotFoundError = require("../expections/fetchError");
+const {
+  UserNotFoundError,
+  BadResponseError,
+} = require("../expections/fetchError");
 const { print } = require("../utils/helper");
 
 async function getUserActivity(username) {
@@ -10,14 +13,19 @@ async function getUserActivity(username) {
       },
     });
 
-    if (res.status === "404") {
-      throw new UserNotFoundError("User not found");
+    const activies = await res.json();
+
+    if (activies.status === "404") {
+      throw new UserNotFoundError("User activities not found");
     }
 
-    const activies = await res.json();
     return activies;
   } catch (err) {
-    print("Something went wrong, try again later!", err.message);
+    if (err instanceof UserNotFoundError || err instanceof BadResponseError) {
+      print("❌ Failed:", err.message);
+    } else {
+      print("Error:", err.message);
+    }
   }
 }
 
