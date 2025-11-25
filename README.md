@@ -13,6 +13,18 @@ A simple command line interface (CLI) to fetch the recent activity of a GitHub u
 1. Clone or download this project
 2. Run it directly (powershell):
 
+### Requirements
+
+This application runs from the command line, it accepts GitHub username as an argument, fetch the user's recent activity using the GitHub API, and display it in the terminal.
+
+Provide the GitHub username as an argument when running the CLI.
+
 ```bash
-   node app.js add "Your first task"
+    github-activity <username>
+```
+
+Example
+
+```bash
+   node app.js "github-username"
 ```

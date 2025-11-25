@@ -4,12 +4,12 @@ const { print, table } = require("./utils/helper");
 
 async function Main() {
   const command = process.argv;
-  if (command.length > 3 || !command[2]) {
-    print(`Invalid command! \nUsage: node app.js <github-username>`);
+  if (command.length > 4 || command[2] !== "github-activity" || !command[3]) {
+    print(`Invalid command! \nUsage: node app.js github-activity <username>`);
     return null;
   }
 
-  const username = command[2];
+  const username = command[3];
   try {
     const events = await getUserActivity(username);
 
