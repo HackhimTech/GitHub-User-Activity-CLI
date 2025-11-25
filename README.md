@@ -14,7 +14,7 @@ A simple command line interface (CLI) to fetch the recent activity of a GitHub u
 2. Run it directly (powershell):
 
 ```bash
-   node app.js github-activity "github-username"
+node app.js github-activity "github-username"
 ```
 
 ## Requirements
@@ -24,7 +24,7 @@ This application runs from the command line, it accepts GitHub username as an ar
 Provide the GitHub username as an argument when running the CLI.
 
 ```bash
-    github-activity <username>
+github-activity <username>
 ```
 
 fetch the recent activity of the specified GitHub user using the GitHub API. Display the fetched activity in the terminal.
@@ -33,10 +33,10 @@ fetch the recent activity of the specified GitHub user using the GitHub API. Dis
 
 ```javascript
 Output:
-    - Pushed 3 commits to kamranahmedse/developer-roadmap
-    - Opened a new issue in kamranahmedse/developer-roadmap
-    - Starred kamranahmedse/developer-roadmap
-    - ...
+- Pushed 3 commits to kamranahmedse/developer-roadmap
+- Opened a new issue in kamranahmedse/developer-roadmap
+- Starred kamranahmedse/developer-roadmap
+- ...
 ```
 
 You can learn more about the GitHub API here.
