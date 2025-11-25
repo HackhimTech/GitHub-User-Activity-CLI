@@ -51,13 +51,17 @@ async function Main() {
           break;
       }
     }
-    print(output);
+    // print(output);
+    print("Output:");
+    output.map((event) => print(`- ${event}`));
+    process.exit(0);
   } catch (err) {
     if (err instanceof UserNotFoundError) {
       print("❌ Failed:", err.message);
     } else {
       print("Something went wrong in Main, try again later!", err.message);
     }
+    process.exit(1);
   }
 }
 
